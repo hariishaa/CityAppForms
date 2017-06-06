@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:view="clr-namespace:CityApp.View"
+            xmlns:b="clr-namespace:CityApp.Behaviors"
+            x:Class="CityApp.View.MainPage"
+            BindingContext="{StaticResource MainViewModel}"
+            Title="{Binding Title}">
+    <view:Page1>
+        <view:Page1.Icon>
+            <FileImageSource>
+                <FileImageSource.File>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="Android" Value="icon_selector_home"/>
+                        <!--                    <On Platform="iOS" Value=""/>        -->
+                    </OnPlatform>
+                </FileImageSource.File>
+            </FileImageSource>
+        </view:Page1.Icon>
+        <view:Page1.Behaviors>
+            <b:EventToCommandBehavior EventName="Appearing" Command="{Binding SetTitleCommand}" 
+                                      CommandParameter="Page 1"/>
+        </view:Page1.Behaviors>
+    </view:Page1>
+    <view:Page2>
+        <view:Page2.Icon>
+            <FileImageSource>
+                <FileImageSource.File>
+                    <OnPlatform x:TypeArguments="x:String">
+                        <On Platform="Android" Value="icon_selector_info"/>
+                        <!--                    <On Platform="iOS" Value=""/>        -->
+                    </OnPlatform>
+                </FileImageSource.File>
+            </FileImageSource>
+        </view:Page2.Icon>
+        <view:Page2.Behaviors>
+            <b:EventToCommandBehavior EventName="Appearing" Command="{Binding SetTitleCommand}" 
+                                      CommandParameter="Page 2"/>
+        </view:Page2.Behaviors>
+    </view:Page2>
+</TabbedPage>
