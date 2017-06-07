@@ -2,11 +2,22 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:CityApp.ViewModel;assembly=CityApp"
+             xmlns:triggers="clr-namespace:CityApp.Triggers;assembly=CityApp"
              x:Class="CityApp.App">
     <Application.Resources>
         <!-- Application resource dictionary -->
         <ResourceDictionary>
+            <!-- ViewModels -->
             <viewmodel:MainViewModel x:Key="MainViewModel"/>
+            <viewmodel:PolyclinicViewModel x:Key="PolyclinicViewModel"/>
+            <!-- Styles -->
+            <Style TargetType="ListView">
+                <Style.Triggers>
+                    <EventTrigger Event="ItemSelected">
+                        <triggers:ListViewItemSelectedTrigger/>
+                    </EventTrigger>
+                </Style.Triggers>
+            </Style>
         </ResourceDictionary>
 	</Application.Resources>
 </Application>

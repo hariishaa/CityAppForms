@@ -58,3 +58,7 @@ Thumbs.db
 
 # Components
 Components/*
+
+#other
+*.log
+*.bak

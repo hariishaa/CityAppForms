@@ -4,6 +4,6 @@
              x:Class="CityApp.View.Page1">
     <StackLayout>
         <Label Text="Welcome to Page1!" />
-        <Button Text="Navigate to Page 2" Clicked="Button_OnClicked"/>
+        <Button Text="Navigate to Polyclinic Page" Clicked="Button_OnClicked"/>
     </StackLayout>
 </ContentPage>

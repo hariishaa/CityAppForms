@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:conv="clr-namespace:CityApp.Converters"
+             xmlns:trig="clr-namespace:CityApp.Triggers"
+             x:Class="CityApp.View.PolyclinicPage"
+             BindingContext="{StaticResource PolyclinicViewModel}"
+             Title="Polyclinic Page">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <conv:IsNotNullOrEmptyConverter x:Key="IsNotNullOrEmptyConverter"/>
+            <Style TargetType="Label">
+                <Style.Triggers>
+                    <Trigger TargetType="Label" Property="Text" Value="">
+                        <Setter Property="IsVisible" Value="False"/>
+                    </Trigger>
+                    <Trigger TargetType="Label" Property="Text" Value="{x:Null}">
+                        <Setter Property="IsVisible" Value="False"/>
+                    </Trigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Icon="ic_info_white_24dp" Text="Info" Clicked="MenuItem_OnClicked"/>
+    </ContentPage.ToolbarItems>
+    <ListView ItemsSource="{Binding Doctors}" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell Tapped="Cell_OnTapped">
+                    <ViewCell.View>
+                        <Grid Padding="16,4,16,4">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="2*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="2*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding Speciality}" TextColor="Blue" FontSize="Medium"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding Name}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            <Label Grid.Row="1" Grid.Column="1" Text="{Binding Region}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Region, Converter={StaticResource IsNotNullOrEmptyConverter}}" Value="True">
+                                        <Setter Property="Text" Value="{Binding Region, StringFormat='Уч. {0}'}"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                            <Label Grid.Row="1" Grid.Column="2" Text="{Binding Room}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
+                                <Label.Triggers>
+                                    <DataTrigger TargetType="Label" Binding="{Binding Room, Converter={StaticResource IsNotNullOrEmptyConverter}}" Value="True">
+                                        <Setter Property="Text" Value="{Binding Room, StringFormat='Каб. {0}'}"/>
+                                    </DataTrigger>
+                                </Label.Triggers>
+                            </Label>
+                            <Grid Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" RowSpacing="0" HorizontalOptions="Fill" IsVisible="False">
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Row="0" Grid.Column="0" Text="ПН" IsVisible="{Binding Monday, Converter={StaticResource IsNotNullOrEmptyConverter}}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="0" Grid.Column="1" Text="ВТ" IsVisible="{Binding Tuesday, Converter={StaticResource IsNotNullOrEmptyConverter}}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="0" Grid.Column="2" Text="СР" IsVisible="{Binding Wednesday, Converter={StaticResource IsNotNullOrEmptyConverter}}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="0" Grid.Column="3" Text="ЧТ" IsVisible="{Binding Thursday, Converter={StaticResource IsNotNullOrEmptyConverter}}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="0" Grid.Column="4" Text="ПТ" IsVisible="{Binding Friday, Converter={StaticResource IsNotNullOrEmptyConverter}}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="1" Grid.Column="0" Text="{Binding Monday}" IsVisible="{Binding Monday, Converter={StaticResource IsNotNullOrEmptyConverter}}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="1" Grid.Column="1" Text="{Binding Tuesday}" IsVisible="{Binding Tuesday, Converter={StaticResource IsNotNullOrEmptyConverter}}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="1" Grid.Column="2" Text="{Binding Wednesday}" IsVisible="{Binding Wednesday, Converter={StaticResource IsNotNullOrEmptyConverter}}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="1" Grid.Column="3" Text="{Binding Thursday}" IsVisible="{Binding Thursday, Converter={StaticResource IsNotNullOrEmptyConverter}}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="1" Grid.Column="4" Text="{Binding Friday}" IsVisible="{Binding Friday, Converter={StaticResource IsNotNullOrEmptyConverter}}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                                <Label Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="5" Text="{Binding Remarks}" IsVisible="{Binding Remarks, Converter={StaticResource IsNotNullOrEmptyConverter}}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            </Grid>
+                        </Grid>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

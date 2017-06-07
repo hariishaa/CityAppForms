@@ -19,7 +19,7 @@ namespace CityApp.View
 
         private async void Button_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Page2());
+            await Navigation.PushAsync(new PolyclinicPage());
         }
     }
 }

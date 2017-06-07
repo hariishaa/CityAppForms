@@ -12,6 +12,7 @@
                 <FileImageSource.File>
                     <OnPlatform x:TypeArguments="x:String">
                         <On Platform="Android" Value="icon_selector_home"/>
+                        <!-- https://developer.xamarin.com/guides/xamarin-forms/user-interface/images/#Local_Images -->
                         <!--                    <On Platform="iOS" Value=""/>        -->
                     </OnPlatform>
                 </FileImageSource.File>
