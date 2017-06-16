@@ -7,42 +7,38 @@ using System.Text;
 using System.Threading.Tasks;
 using CityApp.Annotations;
 using Xamarin.Forms;
+using System.Windows.Input;
 
 namespace CityApp.ViewModel
 {
-    public class MainViewModel : INotifyPropertyChanged
+    public class MainViewModel : ViewModelBase
     {
-        private string _title;
-
-        public string Title
-        {
-            get { return _title; }
-            set
-            {
-                _title = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public Command SetTitleCommand { private set; get; }
-
+        public ICommand SetTitleCommand { private set; get; }
+        public ICommand NavigateToPolyclinicPageCommand { get; private set; }
 
         public MainViewModel()
         {
-            SetTitleCommand = new Command(SetTitle);
+            SetTitleCommand = new Command((title) => Title = title.ToString());
+            NavigateToPolyclinicPageCommand = new Command(
+                async (type) => await NavigateToPolyclinicPage(type)); // todo: change this kostil'
         }
 
-        private void SetTitle(object title)
+        private async Task NavigateToPolyclinicPage(object type)
         {
-            Title = title.ToString();
-        }
-
-        public event PropertyChangedEventHandler PropertyChanged;
-
-        [NotifyPropertyChangedInvocator]
-        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
-        {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            string baseUrl = "http://46.101.183.135/api";
+            switch (type.ToString())
+            {
+                case "adult":
+                    await Application.Current.MainPage.Navigation.PushAsync(new View.PolyclinicPage(
+                            "Взрослая поликлиника", baseUrl + "/get_adult_polyclinic_timetable"));
+                    break;
+                case "children":
+                    await Application.Current.MainPage.Navigation.PushAsync(new View.PolyclinicPage(
+                            "Детская поликлиника", baseUrl + "/get_children_polyclinic_timetable"));
+                    break;
+                default:
+                    break;
+            }
         }
     }
 }

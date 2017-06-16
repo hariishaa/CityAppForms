@@ -13,9 +13,7 @@ namespace CityApp
         {
             InitializeComponent();
 
-            NavigationPage navigationPage = new NavigationPage(new View.MainPage());
-            NavigationPage.SetHasNavigationBar(navigationPage, false);
-            MainPage = navigationPage;
+            MainPage = new NavigationPage(new View.MainPage());
         }
 
         protected override void OnStart()

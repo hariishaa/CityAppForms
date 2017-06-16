@@ -7,6 +7,7 @@
             BindingContext="{StaticResource MainViewModel}"
             Title="{Binding Title}">
     <view:Page1>
+        <!--Change icon code (see polyclinicpage)-->
         <view:Page1.Icon>
             <FileImageSource>
                 <FileImageSource.File>
@@ -19,11 +20,13 @@
             </FileImageSource>
         </view:Page1.Icon>
         <view:Page1.Behaviors>
+            <!--Move title definition to viewmodel-->
             <b:EventToCommandBehavior EventName="Appearing" Command="{Binding SetTitleCommand}" 
                                       CommandParameter="Page 1"/>
         </view:Page1.Behaviors>
     </view:Page1>
     <view:Page2>
+        <!--Change icon code (see polyclinicpage)-->
         <view:Page2.Icon>
             <FileImageSource>
                 <FileImageSource.File>

@@ -3,12 +3,24 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:conv="clr-namespace:CityApp.Converters"
              xmlns:trig="clr-namespace:CityApp.Triggers"
+             xmlns:b="clr-namespace:CityApp.Behaviors"
              x:Class="CityApp.View.PolyclinicPage"
-             BindingContext="{StaticResource PolyclinicViewModel}"
-             Title="Polyclinic Page">
+             Title="{Binding Title}">
+    <!--BindingContext="{StaticResource PolyclinicViewModel}"-->
+    <!--xmlns:viewmodel="clr-namespace:CityApp.ViewModel;assembly=CityApp"
+    <ContentPage.BindingContext>
+        <viewmodel:PolyclinicViewModel/>
+    </ContentPage.BindingContext>-->
     <ContentPage.Resources>
         <ResourceDictionary>
             <conv:IsNotNullOrEmptyConverter x:Key="IsNotNullOrEmptyConverter"/>
+            <Style TargetType="ListView">
+                <Style.Triggers>
+                    <EventTrigger Event="ItemSelected">
+                        <triggers:ListViewItemSelectedTrigger/>
+                    </EventTrigger>
+                </Style.Triggers>
+            </Style>
             <Style TargetType="Label">
                 <Style.Triggers>
                     <Trigger TargetType="Label" Property="Text" Value="">
@@ -24,7 +36,11 @@
     <ContentPage.ToolbarItems>
         <ToolbarItem Order="Primary" Icon="ic_info_white_24dp" Text="Info" Clicked="MenuItem_OnClicked"/>
     </ContentPage.ToolbarItems>
-    <ListView ItemsSource="{Binding Doctors}" HasUnevenRows="True">
+    <ContentPage.Behaviors>
+        <b:EventToCommandBehavior EventName="Appearing" Command="{Binding LoadDataCommand}"/>
+    </ContentPage.Behaviors>
+    <ListView ItemsSource="{Binding Doctors}" HasUnevenRows="True" 
+              RefreshCommand="{Binding LoadDataCommand}" IsRefreshing="{Binding IsLoading}">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell Tapped="Cell_OnTapped">
@@ -40,8 +56,8 @@
                                 <ColumnDefinition Width="*"/>
                                 <ColumnDefinition Width="2*"/>
                             </Grid.ColumnDefinitions>
-                            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding Speciality}" TextColor="Blue" FontSize="Medium"/>
-                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding Name}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
+                            <Label Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Text="{Binding Speciality}" TextColor="Accent" FontSize="Medium"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="{Binding Name}" FontAttributes="Bold" HorizontalTextAlignment="Center" VerticalTextAlignment="Center"/>
                             <Label Grid.Row="1" Grid.Column="1" Text="{Binding Region}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center">
                                 <Label.Triggers>
                                     <DataTrigger TargetType="Label" Binding="{Binding Region, Converter={StaticResource IsNotNullOrEmptyConverter}}" Value="True">
