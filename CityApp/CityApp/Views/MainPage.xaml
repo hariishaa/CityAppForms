@@ -1,9 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:view="clr-namespace:CityApp.View"
+            xmlns:view="clr-namespace:CityApp.Views"
             xmlns:b="clr-namespace:CityApp.Behaviors"
-            x:Class="CityApp.View.MainPage"
+            x:Class="CityApp.Views.MainPage"
             BindingContext="{StaticResource MainViewModel}"
             Title="{Binding Title}">
     <TabbedPage.ToolbarItems>

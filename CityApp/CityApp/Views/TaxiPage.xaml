@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:trig="clr-namespace:CityApp.Triggers"
-             x:Class="CityApp.View.TaxiPage"
+             x:Class="CityApp.Views.TaxiPage"
              x:Name="page"
              BindingContext="{StaticResource TaxiViewModel}"
              Title="{Binding Title}">
@@ -18,18 +18,17 @@
             </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
-    <ListView ItemsSource="{Binding Taxis}" HasUnevenRows="True">
+    <ListView ItemsSource="{Binding Taxis}" HasUnevenRows="True" CachingStrategy="RecycleElement">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell>
-                    <ViewCell.View>
-                        <Grid Padding="16,4,16,4">
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*"/>
-                                <ColumnDefinition Width="*"/>
-                            </Grid.ColumnDefinitions>
-                            <Label Grid.Column="0" Text="{Binding Name}" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large" TextColor="Accent"/>
-                            <!--<StackLayout Grid.Column="1" VerticalOptions="Center">
+                    <Grid Padding="16,4,16,4">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Label Grid.Column="0" Text="{Binding Name}" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large" TextColor="Accent"/>
+                        <!--<StackLayout Grid.Column="1" VerticalOptions="Center">
                                 <ListView ItemsSource="{Binding PhoneNumbers}" SeparatorVisibility="None" RowHeight="44">
                                     <ListView.ItemTemplate>
                                         <DataTemplate>
@@ -46,8 +45,7 @@
                                     </ListView.ItemTemplate>
                                 </ListView>
                             </StackLayout>-->
-                        </Grid>
-                    </ViewCell.View>
+                    </Grid>
                 </ViewCell>
             </DataTemplate>
         </ListView.ItemTemplate>

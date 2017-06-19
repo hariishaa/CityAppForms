@@ -9,7 +9,7 @@ using CityApp.Annotations;
 using Xamarin.Forms;
 using System.Windows.Input;
 
-namespace CityApp.ViewModel
+namespace CityApp.ViewModels
 {
     public class MainViewModel : ViewModelBase
     {

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace CityApp.View
+namespace CityApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TaxiPage : ContentPage

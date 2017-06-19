@@ -41,30 +41,29 @@
     <Compile Include="Behaviors\BehaviorBase.cs" />
     <Compile Include="Behaviors\EventToCommandBehavior.cs" />
     <Compile Include="Converters\IsNotNullOrEmptyConverter.cs" />
-    <Compile Include="Model\Doctor.cs" />
-    <Compile Include="Model\Taxi.cs" />
+    <Compile Include="Models\Doctor.cs" />
+    <Compile Include="Models\Taxi.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Triggers\ListViewItemAppearingTrigger.cs" />
     <Compile Include="Triggers\ListViewItemSelectedTrigger.cs" />
-    <Compile Include="ViewModel\HomeViewModel.cs" />
-    <Compile Include="ViewModel\MainViewModel.cs" />
-    <Compile Include="ViewModel\PolyclinicViewModel.cs" />
-    <Compile Include="ViewModel\TaxiViewModel.cs" />
-    <Compile Include="ViewModel\ViewModelBase.cs" />
-    <Compile Include="View\MainPage.xaml.cs">
+    <Compile Include="ViewModels\HomeViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="ViewModels\PolyclinicViewModel.cs" />
+    <Compile Include="ViewModels\TaxiViewModel.cs" />
+    <Compile Include="ViewModels\ViewModelBase.cs" />
+    <Compile Include="Views\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\HomePage.xaml.cs">
+    <Compile Include="Views\HomePage.xaml.cs">
       <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Page2.xaml.cs">
+    <Compile Include="Views\Page2.xaml.cs">
       <DependentUpon>Page2.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\PolyclinicPage.xaml.cs">
+    <Compile Include="Views\PolyclinicPage.xaml.cs">
       <DependentUpon>PolyclinicPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\TaxiPage.xaml.cs">
+    <Compile Include="Views\TaxiPage.xaml.cs">
       <DependentUpon>TaxiPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
@@ -108,31 +107,31 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="View\MainPage.xaml">
+    <EmbeddedResource Include="Views\MainPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="View\HomePage.xaml">
+    <EmbeddedResource Include="Views\HomePage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="View\Page2.xaml">
+    <EmbeddedResource Include="Views\Page2.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="View\PolyclinicPage.xaml">
+    <EmbeddedResource Include="Views\PolyclinicPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="View\TaxiPage.xaml">
+    <EmbeddedResource Include="Views\TaxiPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

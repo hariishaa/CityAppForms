@@ -4,7 +4,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CityApp.Model;
+using CityApp.Models;
 using System.Windows.Input;
 using Xamarin.Forms;
 using System.Net.Http;
@@ -14,7 +14,7 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using CityApp.Annotations;
 
-namespace CityApp.ViewModel
+namespace CityApp.ViewModels
 {
     public class PolyclinicViewModel : ViewModelBase
     {

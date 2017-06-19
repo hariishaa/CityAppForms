@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace CityApp.Model
+namespace CityApp.Models
 {
     public class Doctor
     {

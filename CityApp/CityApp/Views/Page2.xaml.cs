@@ -1,20 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using CityApp.ViewModel;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
-namespace CityApp.View
+namespace CityApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MainPage : TabbedPage
+    public partial class Page2 : ContentPage
     {
-        public MainPage()
+        public Page2()
         {
             InitializeComponent();
         }
