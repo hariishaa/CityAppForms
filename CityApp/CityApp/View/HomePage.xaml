@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CityApp.View.HomePage"
+             BindingContext="{StaticResource HomeViewModel}">
+    <StackLayout>
+        <Button Text="Детская поликлиника" Command="{Binding NavigateToPolyclinicPageCommand}"
+                CommandParameter="children"/>
+        <Button Text="Взрослая поликлиника" Command="{Binding NavigateToPolyclinicPageCommand}"
+                CommandParameter="adult"/>
+        <Button Text="Такси" Command="{Binding NavigateToTaxiPageCommand}"/>
+        <Button Text="Транспорт" Command="{Binding}" IsEnabled="False"/>
+        <Button Text="Организации" Command="{Binding}" IsEnabled="False"/>
+        <Button Text="Кинотеатр" Command="{Binding}" IsEnabled="False"/>
+        <Button Text="Новости" Command="{Binding}" IsEnabled="False"/>
+        <Button Text="Афиша" Command="{Binding}" IsEnabled="False"/>
+
+    </StackLayout>
+</ContentPage>

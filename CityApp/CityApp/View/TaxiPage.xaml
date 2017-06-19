@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:trig="clr-namespace:CityApp.Triggers"
+             x:Class="CityApp.View.TaxiPage"
+             x:Name="page"
+             BindingContext="{StaticResource TaxiViewModel}"
+             Title="{Binding Title}">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="ListView">
+                <Style.Triggers>
+                    <EventTrigger Event="ItemSelected">
+                        <trig:ListViewItemSelectedTrigger/>
+                    </EventTrigger>
+                </Style.Triggers>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ListView ItemsSource="{Binding Taxis}" HasUnevenRows="True">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <ViewCell.View>
+                        <Grid Padding="16,4,16,4">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label Grid.Column="0" Text="{Binding Name}" VerticalOptions="Center" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Large" TextColor="Accent"/>
+                            <!--<StackLayout Grid.Column="1" VerticalOptions="Center">
+                                <ListView ItemsSource="{Binding PhoneNumbers}" SeparatorVisibility="None" RowHeight="44">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell Appearing="ViewCell_Appearing" Tapped="ViewCell_Tapped">
+                                                <ViewCell.View>
+                                                    <Label Text="{Binding}" HorizontalTextAlignment="Center" VerticalTextAlignment="Center" FontSize="Medium">
+                                                        <Label.GestureRecognizers>
+                                                            <TapGestureRecognizer Command="{Binding BindingContext.MakeACallCommand, Source={x:Reference page}}" CommandParameter="{Binding}"/>
+                                                        </Label.GestureRecognizers>
+                                                    </Label>
+                                                </ViewCell.View>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>-->
+                        </Grid>
+                    </ViewCell.View>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

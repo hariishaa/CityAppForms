@@ -2,14 +2,15 @@
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:viewmodel="clr-namespace:CityApp.ViewModel;assembly=CityApp"
-             xmlns:triggers="clr-namespace:CityApp.Triggers;assembly=CityApp"
              x:Class="CityApp.App">
     <Application.Resources>
         <!-- Application resource dictionary -->
         <ResourceDictionary>
             <!-- ViewModels -->
             <viewmodel:MainViewModel x:Key="MainViewModel"/>
+            <viewmodel:HomeViewModel x:Key="HomeViewModel"/>
             <!--<viewmodel:PolyclinicViewModel x:Key="PolyclinicViewModel"/>-->
+            <viewmodel:TaxiViewModel x:Key="TaxiViewModel"/>
         </ResourceDictionary>
 	</Application.Resources>
 </Application>

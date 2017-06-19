@@ -17,7 +17,7 @@
             <Style TargetType="ListView">
                 <Style.Triggers>
                     <EventTrigger Event="ItemSelected">
-                        <triggers:ListViewItemSelectedTrigger/>
+                        <trig:ListViewItemSelectedTrigger/>
                     </EventTrigger>
                 </Style.Triggers>
             </Style>

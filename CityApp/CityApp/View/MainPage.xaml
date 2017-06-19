@@ -6,9 +6,12 @@
             x:Class="CityApp.View.MainPage"
             BindingContext="{StaticResource MainViewModel}"
             Title="{Binding Title}">
-    <view:Page1>
+    <TabbedPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Icon="ic_settings_white_24dp" Text="Настройки"/>
+    </TabbedPage.ToolbarItems>
+    <view:HomePage>
         <!--Change icon code (see polyclinicpage)-->
-        <view:Page1.Icon>
+        <view:HomePage.Icon>
             <FileImageSource>
                 <FileImageSource.File>
                     <OnPlatform x:TypeArguments="x:String">
@@ -18,13 +21,13 @@
                     </OnPlatform>
                 </FileImageSource.File>
             </FileImageSource>
-        </view:Page1.Icon>
-        <view:Page1.Behaviors>
+        </view:HomePage.Icon>
+        <view:HomePage.Behaviors>
             <!--Move title definition to viewmodel-->
             <b:EventToCommandBehavior EventName="Appearing" Command="{Binding SetTitleCommand}" 
-                                      CommandParameter="Page 1"/>
-        </view:Page1.Behaviors>
-    </view:Page1>
+                                      CommandParameter="Главная"/>
+        </view:HomePage.Behaviors>
+    </view:HomePage>
     <view:Page2>
         <!--Change icon code (see polyclinicpage)-->
         <view:Page2.Icon>
