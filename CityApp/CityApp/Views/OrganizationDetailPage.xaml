@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:rep="clr-namespace:Xamarin.CustomControls;assembly=Xamarin.CustomControls.RepeaterView"
+             x:Class="CityApp.Views.OrganizationDetailPage">
+
+    <ScrollView>
+        <Grid RowSpacing="0" ColumnSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Image x:Name="Map" Grid.Row="0" Aspect="Fill">
+                <!--<Image.GestureRecognizers>
+                <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+            </Image.GestureRecognizers>-->
+            </Image>
+            <Grid Grid.Row="1" Margin="8">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Row="0" Grid.Column="1" Text="{Binding properties.CompanyMetaData.name}" 
+                   FontSize="28" TextColor="Black" Margin="0,8"/>
+                <Image Grid.Row="1" Grid.Column="0" Source="ic_location_on_36dp" Margin="8,4,8,4"/>
+                <Image Grid.Row="2" Grid.Column="0" Source="ic_phone_36dp" Margin="8,4,8,4"/>
+                <!--Default == 14sp-->
+                <Label Grid.Row="1" Grid.Column="1" Text="{Binding properties.CompanyMetaData.address}"
+                   FontSize="Default" TextColor="Black" Margin="0,8,0,8"/>
+                <rep:RepeaterView Grid.Row="2" Grid.Column="1" VerticalOptions="Center" Spacing="8" 
+                              ItemsSource="{Binding properties.CompanyMetaData.Phones}">
+                    <rep:RepeaterView.ItemTemplate>
+                        <DataTemplate>
+                            <Label Text="{Binding formatted}" FontSize="Medium" TextColor="Black"/>
+                        </DataTemplate>
+                    </rep:RepeaterView.ItemTemplate>
+                </rep:RepeaterView>
+            </Grid>
+        </Grid>
+    </ScrollView>
+</ContentPage>

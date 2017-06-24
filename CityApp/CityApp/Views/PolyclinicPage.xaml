@@ -14,13 +14,6 @@
     <ContentPage.Resources>
         <ResourceDictionary>
             <conv:IsNotNullOrEmptyConverter x:Key="IsNotNullOrEmptyConverter"/>
-            <Style TargetType="ListView">
-                <Style.Triggers>
-                    <EventTrigger Event="ItemSelected">
-                        <trig:ListViewItemSelectedTrigger/>
-                    </EventTrigger>
-                </Style.Triggers>
-            </Style>
             <Style TargetType="Label">
                 <Style.Triggers>
                     <Trigger TargetType="Label" Property="Text" Value="">

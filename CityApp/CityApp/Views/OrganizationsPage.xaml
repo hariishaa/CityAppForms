@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="CityApp.Views.OrganizationsPage"
+             Title="{Binding Title}">
+    <!--HasUnevenRows=True doesn't work Oo-->
+    <ListView ItemsSource="{Binding Organizations}" CachingStrategy="RecycleElement"
+              RowHeight="88" ItemTapped="ListView_ItemTapped">
+        <ListView.ItemTemplate>
+            <DataTemplate>
+                <ViewCell>
+                    <StackLayout Margin="16,0,16,0" VerticalOptions="Center">
+                        <Label Text="{Binding properties.CompanyMetaData.name}" 
+                               TextColor="Black" FontSize="16" VerticalTextAlignment="Center"/>
+                        <Label Text="{Binding properties.CompanyMetaData.address}"
+                               FontSize="14" VerticalTextAlignment="Center"/>
+                    </StackLayout>
+                </ViewCell>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

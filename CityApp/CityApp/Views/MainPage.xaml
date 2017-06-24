@@ -42,7 +42,7 @@
         </view:Page2.Icon>
         <view:Page2.Behaviors>
             <b:EventToCommandBehavior EventName="Appearing" Command="{Binding SetTitleCommand}" 
-                                      CommandParameter="Page 2"/>
+                                      CommandParameter="Инфо"/>
         </view:Page2.Behaviors>
     </view:Page2>
 </TabbedPage>

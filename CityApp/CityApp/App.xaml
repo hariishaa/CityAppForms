@@ -1,16 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Application xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             xmlns:viewmodel="clr-namespace:CityApp.ViewModels;assembly=CityApp"
+             xmlns:viewmodel="clr-namespace:CityApp.ViewModels"
+             xmlns:trig="clr-namespace:CityApp.Triggers"
              x:Class="CityApp.App">
     <Application.Resources>
         <!-- Application resource dictionary -->
         <ResourceDictionary>
             <!-- ViewModels -->
             <viewmodel:MainViewModel x:Key="MainViewModel"/>
-            <viewmodel:HomeViewModel x:Key="HomeViewModel"/>
             <!--<viewmodel:PolyclinicViewModel x:Key="PolyclinicViewModel"/>-->
             <viewmodel:TaxiViewModel x:Key="TaxiViewModel"/>
+            <viewmodel:OrganizationsCategoriesViewModel x:Key="OrganizationsCategoriesViewModel"/>
+            <!--<viewmodel:OrganizationsViewModel x:Key="OrganizationsViewModel"/>-->
+            <!--<viewmodel:OrganizationDetailViewModel x:Key="OrganizationDetailViewModel"/>-->
+            <!--Styles-->
+            <Style TargetType="ListView">
+                <Style.Triggers>
+                    <EventTrigger Event="ItemSelected">
+                        <trig:ListViewItemSelectedTrigger/>
+                    </EventTrigger>
+                </Style.Triggers>
+            </Style>
         </ResourceDictionary>
-	</Application.Resources>
+    </Application.Resources>
 </Application>

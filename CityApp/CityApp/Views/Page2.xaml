@@ -4,7 +4,7 @@
              x:Class="CityApp.Views.Page2">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Page2!" />
+            <Label Text="В разработке" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

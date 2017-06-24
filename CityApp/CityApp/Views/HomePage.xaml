@@ -2,7 +2,15 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="CityApp.Views.HomePage"
-             BindingContext="{StaticResource HomeViewModel}">
+             BindingContext="{StaticResource MainViewModel}">
+    <!--<ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="BackgroundColor" Value="Accent"/>
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>-->
     <StackLayout>
         <Button Text="Детская поликлиника" Command="{Binding NavigateToPolyclinicPageCommand}"
                 CommandParameter="children"/>
@@ -10,10 +18,9 @@
                 CommandParameter="adult"/>
         <Button Text="Такси" Command="{Binding NavigateToTaxiPageCommand}"/>
         <Button Text="Транспорт" Command="{Binding}" IsEnabled="False"/>
-        <Button Text="Организации" Command="{Binding}" IsEnabled="False"/>
+        <Button Text="Организации" Command="{Binding NavigateToOrganizationsCategoriesPageCommand}"/>
         <Button Text="Кинотеатр" Command="{Binding}" IsEnabled="False"/>
         <Button Text="Новости" Command="{Binding}" IsEnabled="False"/>
         <Button Text="Афиша" Command="{Binding}" IsEnabled="False"/>
-
     </StackLayout>
 </ContentPage>

@@ -17,18 +17,20 @@ namespace CityApp.Views
             InitializeComponent();
         }
 
+        // todo: remove
         private async void ViewCell_Tapped(object sender, EventArgs e)
         {
             var vc = sender as ViewCell;
             await DisplayAlert("title", vc.View.Height.ToString(), "ok");
         }
 
+        // todo: remove
         private void ViewCell_Appearing(object sender, EventArgs e)
         {
             var viewCell = sender as ViewCell;
             var listView = viewCell.Parent as ListView;
             var items = listView.ItemsSource.Cast<object>().ToList();
-            //listView.HeightRequest = 44 * items.Count + 1;
+            // listView.HeightRequest = 44 * items.Count + 10;
         }
     }
 }
