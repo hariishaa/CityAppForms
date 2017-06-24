@@ -27,13 +27,13 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Primary" Icon="ic_info_white_24dp" Text="Info" Clicked="MenuItem_OnClicked"/>
+        <ToolbarItem Order="Primary" Icon="ic_info_white_24dp" Text="Инфо" Clicked="MenuItem_OnClicked"/>
     </ContentPage.ToolbarItems>
     <ContentPage.Behaviors>
         <b:EventToCommandBehavior EventName="Appearing" Command="{Binding LoadDataCommand}"/>
     </ContentPage.Behaviors>
-    <ListView ItemsSource="{Binding Doctors}" HasUnevenRows="True" CachingStrategy="RecycleElement" 
-              RefreshCommand="{Binding LoadDataCommand}" IsRefreshing="{Binding IsLoading}">
+    <ListView ItemsSource="{Binding Doctors}" HasUnevenRows="True" IsRefreshing="{Binding IsLoading}"
+              RefreshCommand="{Binding LoadDataCommand}">
         <ListView.ItemTemplate>
             <DataTemplate>
                 <ViewCell Tapped="Cell_OnTapped">

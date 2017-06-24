@@ -12,6 +12,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>-->
     <StackLayout>
+        <Button Text="Записаться на прием" Clicked="Button_Clicked"/>
         <Button Text="Детская поликлиника" Command="{Binding NavigateToPolyclinicPageCommand}"
                 CommandParameter="children"/>
         <Button Text="Взрослая поликлиника" Command="{Binding NavigateToPolyclinicPageCommand}"
