@@ -17,9 +17,15 @@ namespace CityApp.Views
             InitializeComponent();
         }
 
+        // todo: move all event handlers to viewmodel
         private async void Button_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new PolyclinicRegistrationPage());
+        }
+
+        private async void Button_Clicked_1(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new TransportPage());
         }
     }
 }

@@ -18,6 +18,7 @@ namespace CityApp.ViewModels
         public ICommand NavigateToPolyclinicPageCommand { get; private set; }
         public ICommand NavigateToTaxiPageCommand { get; private set; }
         public ICommand NavigateToOrganizationsCategoriesPageCommand { get; private set; }
+        public ICommand NavigateToTelevisionPageCommand { get; private set; }
 
         public MainViewModel()
         {
@@ -29,6 +30,8 @@ namespace CityApp.ViewModels
                 async () => await Application.Current.MainPage.Navigation.PushAsync(new TaxiPage()));
             NavigateToOrganizationsCategoriesPageCommand = new Command(
                 async () => await Application.Current.MainPage.Navigation.PushAsync(new OrganizationsCategoriesPage()));
+            NavigateToTelevisionPageCommand = new Command(
+                async () => await Application.Current.MainPage.Navigation.PushAsync(new TelevisionPage()));
         }
 
         private async Task NavigateToPolyclinicPage(object type)

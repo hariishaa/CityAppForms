@@ -18,10 +18,11 @@
         <Button Text="Взрослая поликлиника" Command="{Binding NavigateToPolyclinicPageCommand}"
                 CommandParameter="adult"/>
         <Button Text="Такси" Command="{Binding NavigateToTaxiPageCommand}"/>
-        <Button Text="Транспорт" Command="{Binding}" IsEnabled="False"/>
+        <Button Text="Транспорт" Command="{Binding}" Clicked="Button_Clicked_1" IsEnabled="False"/>
         <Button Text="Организации" Command="{Binding NavigateToOrganizationsCategoriesPageCommand}"/>
         <Button Text="Кинотеатр" Command="{Binding}" IsEnabled="False"/>
         <Button Text="Новости" Command="{Binding}" IsEnabled="False"/>
         <Button Text="Афиша" Command="{Binding}" IsEnabled="False"/>
+        <!--<Button Text="Телевидение" Command="{Binding }"/>-->
     </StackLayout>
 </ContentPage>
