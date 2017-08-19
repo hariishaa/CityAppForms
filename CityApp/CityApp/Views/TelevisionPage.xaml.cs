@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CityApp.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
@@ -16,15 +17,14 @@ namespace CityApp.Views
         public TelevisionPage()
         {
             InitializeComponent();
+
+            BindingContext = new TelevisionViewModel();
         }
 
-        protected override async void OnAppearing()
+        private void ListView_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-            base.OnAppearing();
-
-            //var client = new HttpClient();
-            //var url = new Uri("https://api.vk.com/method/?PARAMETERS&access_token=ACCESS_TOKEN&v=V")
-            //var response = await client.GetAsync();
+            var youtubeItem = e.Item as Models.YoutubeItem;
+            Plugin.Share.CrossShare.Current.OpenBrowser("https://www.youtube.com/watch?v=" + youtubeItem?.VideoId);
         }
     }
 }

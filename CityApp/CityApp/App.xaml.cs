@@ -1,6 +1,7 @@
 ﻿using CityApp.Views;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 
@@ -13,6 +14,9 @@ namespace CityApp
         public App()
         {
             InitializeComponent();
+
+            CultureInfo culture = new CultureInfo("ru-RU");
+            CultureInfo.DefaultThreadCurrentCulture = culture;
 
             MainPage = new NavigationPage(new MainPage());
         }

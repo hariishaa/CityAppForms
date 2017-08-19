@@ -9,7 +9,7 @@ using Android.OS;
 
 namespace CityApp.Droid
 {
-    [Activity(Label = "Краснознаменск-city", Icon = "@drawable/app_icon", Theme = "@style/MainTheme", 
+    [Activity(Label = "КЗ city", Icon = "@drawable/app_icon", Theme = "@style/MainTheme", 
         MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
     public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
     {
@@ -20,6 +20,7 @@ namespace CityApp.Droid
 
             base.OnCreate(bundle);
 
+            global::Xamarin.Auth.Presenters.XamarinAndroid.AuthenticationConfiguration.Init(this, bundle);
             global::Xamarin.Forms.Forms.Init(this, bundle);
             LoadApplication(new App());
         }

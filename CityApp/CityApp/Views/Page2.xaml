@@ -4,7 +4,7 @@
              x:Class="CityApp.Views.Page2">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="В разработке" />
+            <Button Text="Авторизоваться" Clicked="Button_Clicked"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
